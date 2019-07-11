@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Position"; ObjectID = "KZo-4g-2Iq"; */
+"KZo-4g-2Iq.text" = "Position";
+
+/* Class = "UILabel"; text = "Current Role"; ObjectID = "QUJ-1T-1Fz"; */
+"QUJ-1T-1Fz.text" = "Current Role";
+
+/* Class = "UILabel"; text = "Full Name"; ObjectID = "Sc9-kp-CPg"; */
+"Sc9-kp-CPg.text" = "Full Name";
+
+/* Class = "UILabel"; text = "Company"; ObjectID = "s7e-TB-gpd"; */
+"s7e-TB-gpd.text" = "Company";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "ujP-tL-3Vq"; */
+"ujP-tL-3Vq.text" = "Date";
