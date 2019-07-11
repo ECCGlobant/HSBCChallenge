@@ -9,22 +9,29 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    var selectedJob: Job?
 
+    @IBOutlet weak var logoImage: UIImageView!
+    @IBOutlet weak var companyName: UILabel!
+    @IBOutlet weak var roleTitle: UILabel!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var descriptionTxt: UITextView!
+    @IBOutlet weak var dismissButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupView() {
+        guard let job = selectedJob else {return}
+        logoImage.downloaded(from: job.logo)
+        companyName.text = job.company
+        roleTitle.text = job.position
+        date.text = job.date
+        descriptionTxt.text = job.jobDescr
+        dismissButton.setTitle("dismiss_text".localize(), for: .normal)
     }
-    */
 
 }

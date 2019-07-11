@@ -5,3 +5,8 @@
   Created by Emmanuel Casanas Cruz on 7/9/19.
   Copyright © 2019 Globant. All rights reserved.
 */
+
+"EmptyViewTitle" = "Something went wrong.";
+"EmptyViewMessage" = "Please try again later.";
+"RetryButtonTitle" = "Try again";
+"dismiss_text" = "Dismiss";

@@ -7,26 +7,23 @@
 //
 
 import XCTest
+@testable import CodeChallenge
 
 class CodeChallengeTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testUserModel() {
+        let model = User(name: "Barry Allen", currentJob: "Speedster", pictureUrl: "https://www.picture.com/barry", jobs: [])
+        let viewModel = UserViewModel(user: model)
+        
+        XCTAssertEqual(viewModel.userName, model.name)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    
+    func testResponseAPI () {
+        LibraryAPI.sharedInstance.getProfileInfo(Success: { (response) in
+            XCTAssert(response.isKind(of: infoResponse.self))
+        }) { (error) in
+             //XCTAssert(error)
         }
     }
 

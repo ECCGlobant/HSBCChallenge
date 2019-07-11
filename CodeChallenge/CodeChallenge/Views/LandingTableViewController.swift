@@ -8,33 +8,76 @@
 
 import UIKit
 
-class LandingTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+public class LandingTableViewController: UITableViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
-    override func viewDidLoad() {
+    @IBOutlet weak var appCollectionView: UICollectionView!
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var currentRole: UILabel!
+    
+    let viewModel = UserViewModel()
+    var isEmpty = false
+    override public func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        viewModel.delegate = self
+        viewModel.getInformation()
+        
+    }
+    
+    //Mark: - TableView
+    
+    override public func numberOfSections(in tableView: UITableView) -> Int {
+        return  viewModel.isEmpty ? 0 : 1
     }
 
     // MARK: - Collection view data source
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return  viewModel.isEmpty  ? 0 : 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return   viewModel.isEmpty  ? 0 : viewModel.jobs.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Appcell", for: indexPath)
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Appcell", for: indexPath) as! AppCellCollectionViewCell
+        
+        let job = viewModel.jobs[indexPath.row]
+        cell.configure(with: job)
         
         return cell
     }
-
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "gotoDetail", sender: viewModel.jobs[indexPath.row])
+    }
+    
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue){
+        
+    }
+    
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailViewController {
+            destination.selectedJob = (sender as! Job)
+        }
+    }
+    
+    override public func unwind(for unwindSegue: UIStoryboardSegue, towards subsequentVC: UIViewController) {
+        let segue = UnwindScaleSegue(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
+        segue.perform()
+    }
 
 }
+
+extension LandingTableViewController :viewModelDelegate {
+    func didLoadInfoSucces() {
+        viewModel.setupView(self)
+    }
+    
+    func didLoadInfoFailed() {
+        viewModel.showEmptyScreen(self)
+    }
+    
+}
+

@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct User: Decodable {
+    
+    let name: String
+    let currentJob: String
+    let pictureUrl: String
+    let jobs: [Job]
+
+}

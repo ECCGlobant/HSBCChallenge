@@ -5,3 +5,8 @@
   Created by Emmanuel Casanas Cruz on 7/9/19.
   Copyright © 2019 Globant. All rights reserved.
 */
+
+"EmptyViewTitle" = "No se pudo recuperar la Información";
+"EmptyViewMessage" = "Intenta de nuevo más tarde";
+"RetryButtonTitle" = "Reintentar";
+"dismiss_text" = "Cerrar";
