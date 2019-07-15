@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = "Position"; ObjectID = "KZo-4g-2Iq"; */
+"KZo-4g-2Iq.text" = "Position";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "LCd-JM-tnk"; */
+"LCd-JM-tnk.text" = "Date";
+
+/* Class = "UILabel"; text = "Current Role"; ObjectID = "QUJ-1T-1Fz"; */
+"QUJ-1T-1Fz.text" = "Current Role";
+
+/* Class = "UILabel"; text = "Full Name"; ObjectID = "Sc9-kp-CPg"; */
+"Sc9-kp-CPg.text" = "Full Name";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "Tka-wa-2RU"; */
+"Tka-wa-2RU.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Position"; ObjectID = "XNn-jJ-mva"; */
+"XNn-jJ-mva.text" = "Position";
+
+/* Class = "UIButton"; normalTitle = "Dismiss"; ObjectID = "b9I-bR-rOi"; */
+"b9I-bR-rOi.normalTitle" = "Dismiss";
+
+/* Class = "UILabel"; text = "Company"; ObjectID = "s7e-TB-gpd"; */
+"s7e-TB-gpd.text" = "Company";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "ujP-tL-3Vq"; */
+"ujP-tL-3Vq.text" = "Date";
+
+/* Class = "UILabel"; text = "Company Name"; ObjectID = "wbv-C1-xqz"; */
+"wbv-C1-xqz.text" = "Company Name";

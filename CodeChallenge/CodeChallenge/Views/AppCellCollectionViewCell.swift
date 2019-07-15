@@ -22,6 +22,7 @@ class AppCellCollectionViewCell: UICollectionViewCell {
         appView.clipsToBounds = true
         companyLogo.layer.cornerRadius = 40
         companyLogo.clipsToBounds = true
+        self.isAccessibilityElement = true
     }
     
     public func configure(with model: Job) {

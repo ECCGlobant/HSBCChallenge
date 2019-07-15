@@ -20,7 +20,8 @@ class infoResponse: NSObject {
         id = dictionary["id"] as? String ?? ""
         jobTitle = dictionary["job_title"] as? String ?? ""
         pictureURL = dictionary["picture"] as? String ?? ""
-        jobs = Utility.getArrayOfJobs(dictionary: dictionary["jobs"] as! [Dictionary<String, AnyObject>])
+        let array = dictionary["jobs"] as? [Dictionary<String, AnyObject>] ?? []
+        jobs =     Utility.getArrayOfJobs(dictionary: array)
     }
     
 }

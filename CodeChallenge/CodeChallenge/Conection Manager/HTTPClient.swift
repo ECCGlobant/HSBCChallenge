@@ -86,64 +86,12 @@ class HTTPClient: NSObject {
     }
     
     
-    func doRequest(method: String, parameters: Dictionary<String, AnyObject>, onSuccess: @escaping ([String:AnyObject]) -> Void, onError: @escaping (NSError) -> Void) {
-        
-        doRequest(method: method, type: "POST", parameters: parameters, onSuccess: onSuccess , onError: onError)
-    }
-    
-    
     func prepareRequestWithMethod(method: String, type: String) {
         let url = NSURL(string: "\(SERVER)\(method)")
         request = NSMutableURLRequest(url: url! as URL)
         request!.timeoutInterval = 30
     }
     
-    
-    func stringFromQueryParameters(queryParameters : Dictionary<String, AnyObject>) -> String {
-        var parts: [String] = []
-        for (name, value) in queryParameters {
-            let part = NSString(format: "%@=%@",name.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!,value.addingPercentEncoding(withAllowedCharacters: .alphanumerics)!)
-            
-            parts.append(part as String)
-        }
-        return parts.joined(separator: "&")
-    }
-    
 }
 
-protocol URLQueryParameterStringConvertible {
-    var queryParameters: String {get}
-}
-
-extension Dictionary : URLQueryParameterStringConvertible {
-    /**
-     This computed property returns a query parameters string from the given NSDictionary. For
-     example, if the input is @{@"day":@"Tuesday", @"month":@"January"}, the output
-     string will be @"day=Tuesday&month=January".
-     @return The computed parameters string.
-     */
-    var queryParameters: String {
-        var parts: [String] = []
-        for (key, value) in self {
-            let part = NSString(format: "%@=%@",
-                                String(describing: key).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!,
-                                String(describing: value).addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
-            parts.append(part as String)
-        }
-        return parts.joined(separator: "&")
-    }
-    
-}
-
-extension NSURL {
-    /**
-     Creates a new URL by adding the given query parameters.
-     @param parametersDictionary The query parameter dictionary to add.
-     @return A new NSURL.
-     */
-    func URLByAppendingQueryParameters(parametersDictionary : Dictionary<String, String>) -> NSURL {
-        let URLString : NSString = NSString(format: "%@?%@", self.absoluteString!, parametersDictionary.queryParameters)
-        return NSURL(string: URLString as String)!
-    }
-}
 

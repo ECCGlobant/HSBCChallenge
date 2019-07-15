@@ -23,8 +23,27 @@ class CodeChallengeTests: XCTestCase {
         LibraryAPI.sharedInstance.getProfileInfo(Success: { (response) in
             XCTAssert(response.isKind(of: infoResponse.self))
         }) { (error) in
-             //XCTAssert(error)
+
         }
     }
+    
+    func testLocalizableString() {
+        let text =  "EmptyViewTitle".localize()
+         XCTAssert(text == "Something went wrong.")
+    }
+    
+    func testJsonJobException() {
+        let dictionary = ["element": "empty"]
+        let job = Job (dictionary: dictionary as Dictionary<String, AnyObject>)
+        XCTAssert(job.company == "")
+    }
+
+    func testInfoResponseException() {
+        let dictionary = ["jobs": "empty"]
+        let response = infoResponse (dictionary: dictionary as Dictionary<String, AnyObject>)
+        XCTAssert(response.name == "")
+    }
+    
+    
 
 }

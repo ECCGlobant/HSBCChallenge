@@ -19,6 +19,9 @@ public class LandingTableViewController: UITableViewController, UICollectionView
     var isEmpty = false
     override public func viewDidLoad() {
         super.viewDidLoad()
+        tableView.accessibilityIdentifier = "landingTableViewIdentifier"
+        appCollectionView.accessibilityIdentifier = "appCollectionViewIdentifier"
+        appCollectionView.isAccessibilityElement = true
         viewModel.delegate = self
         viewModel.getInformation()
         
@@ -42,10 +45,11 @@ public class LandingTableViewController: UITableViewController, UICollectionView
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Appcell", for: indexPath) as! AppCellCollectionViewCell
-        
+        cell.isAccessibilityElement = true
+        cell.accessibilityIdentifier = "cellID" 
         let job = viewModel.jobs[indexPath.row]
         cell.configure(with: job)
-        
+       
         return cell
     }
     
