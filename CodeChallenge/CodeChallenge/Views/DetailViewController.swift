@@ -32,6 +32,7 @@ class DetailViewController: UIViewController {
         date.text = job.date
         descriptionTxt.text = job.jobDescr
         dismissButton.setTitle("dismiss_text".localize(), for: .normal)
+        dismissButton.accessibilityIdentifier = "dismissButton"
     }
 
 }

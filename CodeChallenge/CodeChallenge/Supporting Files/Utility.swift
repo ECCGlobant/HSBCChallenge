@@ -51,7 +51,7 @@ extension UITableView {
         emptyView.addSubview(titleLabel)
         emptyView.addSubview(messageImageView)
         emptyView.addSubview(messageLabel)
-        //emptyView.addSubview(retryButton)
+        emptyView.addSubview(retryButton)
         
         messageImageView.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor).isActive = true
         messageImageView.centerYAnchor.constraint(equalTo: emptyView.centerYAnchor, constant: -20).isActive = true

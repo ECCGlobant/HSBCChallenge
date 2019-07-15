@@ -44,6 +44,12 @@ class CodeChallengeTests: XCTestCase {
         XCTAssert(response.name == "")
     }
     
+    func testEmptyView() {
+        let tableView = UITableView()
+        tableView.setEmptyView(title: "Emmpty", message: "Empty text", messageImage: UIImage(named: "profile_placeholder")!)
+        tableView.restore()
+    }
+    
     
 
 }
