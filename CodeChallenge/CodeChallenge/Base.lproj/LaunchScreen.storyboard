@@ -17,7 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.2836650013923645" blue="0.18529051542282104" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="0De-Bk-xoI">
+                                <rect key="frame" x="81" y="327" width="252" height="252"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0De-Bk-xoI" secondAttribute="height" multiplier="1:1" id="X0O-rg-E0H"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0De-Bk-xoI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="NQR-px-E73"/>
+                            <constraint firstItem="0De-Bk-xoI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="283" id="VDT-ag-OTs"/>
+                            <constraint firstItem="0De-Bk-xoI" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ahY-9M-plM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -26,4 +39,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="53" height="52.5"/>
+    </resources>
 </document>

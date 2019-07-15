@@ -19,8 +19,8 @@ public class LandingTableViewController: UITableViewController, UICollectionView
     var isEmpty = false
     override public func viewDidLoad() {
         super.viewDidLoad()
-        tableView.accessibilityIdentifier = "landingTableViewIdentifier"
-        appCollectionView.accessibilityIdentifier = "appCollectionViewIdentifier"
+        tableView.accessibilityIdentifier = CellIdentifier.assistiveTable
+        appCollectionView.accessibilityIdentifier = CellIdentifier.assistiveCollection
         appCollectionView.isAccessibilityElement = true
         viewModel.delegate = self
         viewModel.getInformation()
@@ -44,9 +44,9 @@ public class LandingTableViewController: UITableViewController, UICollectionView
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Appcell", for: indexPath) as! AppCellCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.value, for: indexPath) as! AppCellCollectionViewCell
         cell.isAccessibilityElement = true
-        cell.accessibilityIdentifier = "cellID" 
+        cell.accessibilityIdentifier = CellIdentifier.assistiveCell
         let job = viewModel.jobs[indexPath.row]
         cell.configure(with: job)
        
@@ -54,7 +54,7 @@ public class LandingTableViewController: UITableViewController, UICollectionView
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "gotoDetail", sender: viewModel.jobs[indexPath.row])
+        self.performSegue(withIdentifier: SegueID.nameSegue, sender: viewModel.jobs[indexPath.row])
     }
     
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue){

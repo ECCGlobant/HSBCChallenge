@@ -30,12 +30,45 @@ struct APPURL {
 }
 
 struct CellIdentifier {
-//    private struct Collection {
-//        static let jobCell =  "Appcell"
-//    }
-//    
-//    static var appCell :String {
-//        return 
-//    }
     
+    private struct Collection {
+        static let jobCell =  "Appcell"
+        static let cellID = "cellID"
+        static let tableViewID = "landingTableViewIdentifier"
+        static let collectionViewID = "appCollectionViewIdentifier"
+    }
+    
+    private static let cellIdentifier  = Collection.jobCell
+    private static let cellIDAssistive  = Collection.cellID
+    private static let tableViewIDAssistive  = Collection.tableViewID
+    private static let collectionIDAssistive  = Collection.collectionViewID
+    
+    
+    static var value: String {
+        return cellIdentifier
+    }
+    
+    static var assistiveCell: String {
+        return cellIDAssistive
+    }
+    
+    static var assistiveTable: String {
+        return tableViewIDAssistive
+    }
+    
+    static var assistiveCollection: String {
+        return collectionIDAssistive
+    }
+    
+}
+
+struct SegueID {
+    private struct Detail {
+        static let DetailSegue =  "gotoDetail"
+    }
+      private static let segueIdentifier  = Detail.DetailSegue
+    
+    static var nameSegue : String {
+        return segueIdentifier
+    }
 }
